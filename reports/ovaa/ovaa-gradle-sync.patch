@@ -1,0 +1,79 @@
+diff --git a/app/build.gradle b/app/build.gradle
+index b84e455..ba28625 100644
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -1,19 +1,25 @@
+ plugins {
+     id 'com.android.application'
++    id 'dev.flowlens.android'
+ }
+ 
+ android {
+-    compileSdk 34
++    // The configured SDK contains platform 35; 34 is absent in this checkout.
++    compileSdk 35
+     defaultConfig {
+         applicationId "oversecured.ovaa"
+         minSdk 26
+-        targetSdk 34
++        targetSdk 35
+         versionCode 1
+         versionName "1.0"
+     }
+-    externalNativeBuild {
+-        cmake {
+-            path file('CMakeLists.txt')
++    // The local SDK has no CMake package. Set OVAA_ENABLE_NATIVE=true after
++    // installing CMake to include the native memory-corruption fixture.
++    if (System.getenv("OVAA_ENABLE_NATIVE") == "true") {
++        externalNativeBuild {
++            cmake {
++                path file('CMakeLists.txt')
++            }
+         }
+     }
+     compileOptions {
+@@ -24,10 +30,15 @@ android {
+         checkReleaseBuilds false
+         abortOnError false
+     }
+-    ndkVersion '27.0.11902837'
++    // The configured SDK contains NDK 30.0.16248370; NDK 27 is absent.
++    ndkVersion '30.0.16248370'
+     namespace 'oversecured.ovaa'
+ }
+ 
++flowLens {
++    maxFindings = 100
++}
++
+ dependencies {
+     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+     implementation 'androidx.appcompat:appcompat:1.7.0'
+diff --git a/build.gradle b/build.gradle
+index 5db3288..7771ed9 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -1,8 +1,9 @@
+ plugins {
+     id 'com.android.application' version '8.5.1' apply false
+     id 'com.android.library' version '8.5.1' apply false
++    id 'dev.flowlens.android' apply false
+ }
+ 
+ task clean(type: Delete) {
+     delete rootProject.buildDir
+-}
+\ No newline at end of file
++}
+diff --git a/settings.gradle b/settings.gradle
+index 1fc8b61..2f8223d 100644
+--- a/settings.gradle
++++ b/settings.gradle
+@@ -1,4 +1,6 @@
+ pluginManagement {
++    // Local Flow Lens build; remove this includeBuild when consuming a published plugin.
++    includeBuild("/home/lucas/Documents/Codex/2026-09-25/new-chat/outputs/android-flow-lens")
+     repositories {
+         gradlePluginPortal()
+         google()

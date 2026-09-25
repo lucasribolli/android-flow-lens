@@ -1,0 +1,5 @@
+[
+  {"id":"intent-string-extra","kind":"source","owner":"android/content/Intent","name":"getStringExtra","descriptor":"(Ljava/lang/String;)Ljava/lang/String;","argument":-1},
+  {"id":"sql-exec","kind":"sink","owner":"android/database/sqlite/SQLiteDatabase","name":"execSQL","descriptor":"(Ljava/lang/String;)V","argument":0},
+  {"id":"sql-bind-query","kind":"sink","owner":"android/database/sqlite/SQLiteDatabase","name":"execSQL","descriptor":"(Ljava/lang/String;[Ljava/lang/Object;)V","argument":0}
+]

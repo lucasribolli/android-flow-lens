@@ -1,0 +1,3370 @@
+{
+  "schemaVersion": "1.0",
+  "analysis": {
+    "engine": "asm-explicit-value-taint",
+    "status": "complete-within-declared-scope",
+    "scope": "intraprocedural",
+    "classCount": 6,
+    "methodCount": 11,
+    "analyzedMethodCount": 11,
+    "failedMethodCount": 0,
+    "findingCount": 1,
+    "reachability": "all-input-methods; Android/runtime reachability unproven",
+    "findingMeaning": "potential explicit-value flow, not proof of exploitability",
+    "coverage": [
+      "Intraprocedural only: callees are not analyzed in calling context; all input methods are analyzed independently.",
+      "No Android entry-point reachability, lifecycle, callback or inter-component communication model.",
+      "No heap, field contents, array contents, object alias or receiver-mutation tracking.",
+      "No reflection target resolution, JNI/native analysis or dynamically loaded code analysis.",
+      "No implicit/control-dependence taint, branch feasibility proof or sanitizer models.",
+      "No virtual dispatch resolution: call records are bytecode-declared targets, not a resolved call graph.",
+      "No dedicated coroutine, Compose, Flow/Rx or framework/library semantic models.",
+      "Unknown call returns conservatively inherit receiver/argument taint; this can produce false positives.",
+      "Multi-release JAR version overlays are excluded; only base .class entries are analyzed.",
+      "Rules match exact JVM owner/name/descriptor; inherited declarations and overloads need their own rules.",
+      "Missing debug information leaves source files or line numbers unavailable; input obfuscation is not reversed."
+    ],
+    "rules": [
+      {
+        "id": "intent-string-extra",
+        "kind": "source",
+        "owner": "android/content/Intent",
+        "name": "getStringExtra",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+        "argument": -1
+      },
+      {
+        "id": "runtime-exec",
+        "kind": "sink",
+        "owner": "java/lang/Runtime",
+        "name": "exec",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/Process;",
+        "argument": 0
+      },
+      {
+        "id": "sql-exec",
+        "kind": "sink",
+        "owner": "android/database/sqlite/SQLiteDatabase",
+        "name": "execSQL",
+        "descriptor": "(Ljava/lang/String;)V",
+        "argument": 0
+      },
+      {
+        "id": "sql-exec-bind",
+        "kind": "sink",
+        "owner": "android/database/sqlite/SQLiteDatabase",
+        "name": "execSQL",
+        "descriptor": "(Ljava/lang/String;[Ljava/lang/Object;)V",
+        "argument": 0
+      },
+      {
+        "id": "webview-url",
+        "kind": "sink",
+        "owner": "android/webkit/WebView",
+        "name": "loadUrl",
+        "descriptor": "(Ljava/lang/String;)V",
+        "argument": 0
+      }
+    ]
+  },
+  "methods": [
+    {
+      "id": "androidx/appcompat/app/AppCompatActivity#<init>()V",
+      "owner": "androidx/appcompat/app/AppCompatActivity",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "AppCompatActivity.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 4
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 4,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKESPECIAL",
+          "line": 4,
+          "callee": "android/app/Activity#<init>()V"
+        },
+        {
+          "index": 4,
+          "opcode": "RETURN",
+          "line": 4
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/R#<init>()V",
+      "owner": "oversecured/ovaa/R",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "R.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 4
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 4,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKESPECIAL",
+          "line": 4,
+          "callee": "java/lang/Object#<init>()V"
+        },
+        {
+          "index": 4,
+          "opcode": "RETURN",
+          "line": 4
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/R$id#<init>()V",
+      "owner": "oversecured/ovaa/R$id",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "R.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 6
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 6,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKESPECIAL",
+          "line": 6,
+          "callee": "java/lang/Object#<init>()V"
+        },
+        {
+          "index": 4,
+          "opcode": "RETURN",
+          "line": 6
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/R$layout#<init>()V",
+      "owner": "oversecured/ovaa/R$layout",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "R.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 5
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 5,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKESPECIAL",
+          "line": 5,
+          "callee": "java/lang/Object#<init>()V"
+        },
+        {
+          "index": 4,
+          "opcode": "RETURN",
+          "line": 5
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/activities/WebViewActivity#<init>()V",
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "WebViewActivity.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 12
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 12,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKESPECIAL",
+          "line": 12,
+          "callee": "androidx/appcompat/app/AppCompatActivity#<init>()V"
+        },
+        {
+          "index": 4,
+          "opcode": "RETURN",
+          "line": 12
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "onCreate",
+      "descriptor": "(Landroid/os/Bundle;)V",
+      "sourceFile": "WebViewActivity.java",
+      "access": 4,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 15
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 15,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "ALOAD",
+          "line": 15,
+          "local": 1
+        },
+        {
+          "index": 4,
+          "opcode": "INVOKESPECIAL",
+          "line": 15,
+          "callee": "androidx/appcompat/app/AppCompatActivity#onCreate(Landroid/os/Bundle;)V"
+        },
+        {
+          "index": 5,
+          "opcode": "LABEL",
+          "line": 15
+        },
+        {
+          "index": 6,
+          "opcode": "LINE",
+          "line": 16
+        },
+        {
+          "index": 7,
+          "opcode": "ALOAD",
+          "line": 16,
+          "local": 0
+        },
+        {
+          "index": 8,
+          "opcode": "ICONST_1",
+          "line": 16
+        },
+        {
+          "index": 9,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 16,
+          "callee": "oversecured/ovaa/activities/WebViewActivity#setContentView(I)V"
+        },
+        {
+          "index": 10,
+          "opcode": "LABEL",
+          "line": 16
+        },
+        {
+          "index": 11,
+          "opcode": "LINE",
+          "line": 18
+        },
+        {
+          "index": 12,
+          "opcode": "ALOAD",
+          "line": 18,
+          "local": 0
+        },
+        {
+          "index": 13,
+          "opcode": "ICONST_2",
+          "line": 18
+        },
+        {
+          "index": 14,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 18,
+          "callee": "oversecured/ovaa/activities/WebViewActivity#findViewById(I)Landroid/view/View;"
+        },
+        {
+          "index": 15,
+          "opcode": "CHECKCAST",
+          "line": 18,
+          "type": "android/webkit/WebView"
+        },
+        {
+          "index": 16,
+          "opcode": "ASTORE",
+          "line": 18,
+          "local": 2
+        },
+        {
+          "index": 17,
+          "opcode": "LABEL",
+          "line": 18
+        },
+        {
+          "index": 18,
+          "opcode": "LINE",
+          "line": 19
+        },
+        {
+          "index": 19,
+          "opcode": "ALOAD",
+          "line": 19,
+          "local": 0
+        },
+        {
+          "index": 20,
+          "opcode": "ALOAD",
+          "line": 19,
+          "local": 2
+        },
+        {
+          "index": 21,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 19,
+          "callee": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V"
+        },
+        {
+          "index": 22,
+          "opcode": "LABEL",
+          "line": 19
+        },
+        {
+          "index": 23,
+          "opcode": "LINE",
+          "line": 20
+        },
+        {
+          "index": 24,
+          "opcode": "ALOAD",
+          "line": 20,
+          "local": 2
+        },
+        {
+          "index": 25,
+          "opcode": "ALOAD",
+          "line": 20,
+          "local": 0
+        },
+        {
+          "index": 26,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 20,
+          "callee": "oversecured/ovaa/activities/WebViewActivity#getIntent()Landroid/content/Intent;"
+        },
+        {
+          "index": 27,
+          "opcode": "LDC",
+          "line": 20,
+          "constantType": "String"
+        },
+        {
+          "index": 28,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 20,
+          "callee": "android/content/Intent#getStringExtra(Ljava/lang/String;)Ljava/lang/String;"
+        },
+        {
+          "index": 29,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 20,
+          "callee": "android/webkit/WebView#loadUrl(Ljava/lang/String;)V"
+        },
+        {
+          "index": 30,
+          "opcode": "LABEL",
+          "line": 20
+        },
+        {
+          "index": 31,
+          "opcode": "LINE",
+          "line": 21
+        },
+        {
+          "index": 32,
+          "opcode": "RETURN",
+          "line": 21
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "kind": "normal"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "kind": "normal"
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "kind": "normal"
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "kind": "normal"
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "kind": "normal"
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "kind": "normal"
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "kind": "normal"
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "kind": "normal"
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "kind": "normal"
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "kind": "normal"
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "kind": "normal"
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "kind": "normal"
+        },
+        {
+          "from": 22,
+          "to": 23,
+          "kind": "normal"
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "kind": "normal"
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "kind": "normal"
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "kind": "normal"
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "kind": "normal"
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "kind": "normal"
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "kind": "normal"
+        },
+        {
+          "from": 29,
+          "to": 30,
+          "kind": "normal"
+        },
+        {
+          "from": 30,
+          "to": 31,
+          "kind": "normal"
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "setupWebView",
+      "descriptor": "(Landroid/webkit/WebView;)V",
+      "sourceFile": "WebViewActivity.java",
+      "access": 2,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 24
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 24,
+          "local": 1
+        },
+        {
+          "index": 3,
+          "opcode": "NEW",
+          "line": 24,
+          "type": "android/webkit/WebChromeClient"
+        },
+        {
+          "index": 4,
+          "opcode": "DUP",
+          "line": 24
+        },
+        {
+          "index": 5,
+          "opcode": "INVOKESPECIAL",
+          "line": 24,
+          "callee": "android/webkit/WebChromeClient#<init>()V"
+        },
+        {
+          "index": 6,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 24,
+          "callee": "android/webkit/WebView#setWebChromeClient(Landroid/webkit/WebChromeClient;)V"
+        },
+        {
+          "index": 7,
+          "opcode": "LABEL",
+          "line": 24
+        },
+        {
+          "index": 8,
+          "opcode": "LINE",
+          "line": 25
+        },
+        {
+          "index": 9,
+          "opcode": "ALOAD",
+          "line": 25,
+          "local": 1
+        },
+        {
+          "index": 10,
+          "opcode": "NEW",
+          "line": 25,
+          "type": "android/webkit/WebViewClient"
+        },
+        {
+          "index": 11,
+          "opcode": "DUP",
+          "line": 25
+        },
+        {
+          "index": 12,
+          "opcode": "INVOKESPECIAL",
+          "line": 25,
+          "callee": "android/webkit/WebViewClient#<init>()V"
+        },
+        {
+          "index": 13,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 25,
+          "callee": "android/webkit/WebView#setWebViewClient(Landroid/webkit/WebViewClient;)V"
+        },
+        {
+          "index": 14,
+          "opcode": "LABEL",
+          "line": 25
+        },
+        {
+          "index": 15,
+          "opcode": "LINE",
+          "line": 26
+        },
+        {
+          "index": 16,
+          "opcode": "ALOAD",
+          "line": 26,
+          "local": 1
+        },
+        {
+          "index": 17,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 26,
+          "callee": "android/webkit/WebView#getSettings()Landroid/webkit/WebSettings;"
+        },
+        {
+          "index": 18,
+          "opcode": "ICONST_1",
+          "line": 26
+        },
+        {
+          "index": 19,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 26,
+          "callee": "android/webkit/WebSettings#setJavaScriptEnabled(Z)V"
+        },
+        {
+          "index": 20,
+          "opcode": "LABEL",
+          "line": 26
+        },
+        {
+          "index": 21,
+          "opcode": "LINE",
+          "line": 27
+        },
+        {
+          "index": 22,
+          "opcode": "ALOAD",
+          "line": 27,
+          "local": 1
+        },
+        {
+          "index": 23,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 27,
+          "callee": "android/webkit/WebView#getSettings()Landroid/webkit/WebSettings;"
+        },
+        {
+          "index": 24,
+          "opcode": "ICONST_1",
+          "line": 27
+        },
+        {
+          "index": 25,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 27,
+          "callee": "android/webkit/WebSettings#setAllowFileAccessFromFileURLs(Z)V"
+        },
+        {
+          "index": 26,
+          "opcode": "LABEL",
+          "line": 27
+        },
+        {
+          "index": 27,
+          "opcode": "LINE",
+          "line": 28
+        },
+        {
+          "index": 28,
+          "opcode": "RETURN",
+          "line": 28
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "kind": "normal"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "kind": "normal"
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "kind": "normal"
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "kind": "normal"
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "kind": "normal"
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "kind": "normal"
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "kind": "normal"
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "kind": "normal"
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "kind": "normal"
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "kind": "normal"
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "kind": "normal"
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "kind": "normal"
+        },
+        {
+          "from": 22,
+          "to": 23,
+          "kind": "normal"
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "kind": "normal"
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "kind": "normal"
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "kind": "normal"
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "kind": "normal"
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/services/InsecureLoggerService#<init>()V",
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "<init>",
+      "descriptor": "()V",
+      "sourceFile": "InsecureLoggerService.java",
+      "access": 1,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 18
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 18,
+          "local": 0
+        },
+        {
+          "index": 3,
+          "opcode": "LDC",
+          "line": 18,
+          "constantType": "String"
+        },
+        {
+          "index": 4,
+          "opcode": "INVOKESPECIAL",
+          "line": 18,
+          "callee": "android/app/IntentService#<init>(Ljava/lang/String;)V"
+        },
+        {
+          "index": 5,
+          "opcode": "LABEL",
+          "line": 18
+        },
+        {
+          "index": 6,
+          "opcode": "LINE",
+          "line": 19
+        },
+        {
+          "index": 7,
+          "opcode": "RETURN",
+          "line": 19
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "dumpLogs",
+      "descriptor": "(Ljava/io/File;)V",
+      "sourceFile": "InsecureLoggerService.java",
+      "access": 2,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 40
+        },
+        {
+          "index": 2,
+          "opcode": "INVOKESTATIC",
+          "line": 40,
+          "callee": "java/lang/Runtime#getRuntime()Ljava/lang/Runtime;"
+        },
+        {
+          "index": 3,
+          "opcode": "LDC",
+          "line": 40,
+          "constantType": "String"
+        },
+        {
+          "index": 4,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 40,
+          "callee": "java/lang/Runtime#exec(Ljava/lang/String;)Ljava/lang/Process;"
+        },
+        {
+          "index": 5,
+          "opcode": "ASTORE",
+          "line": 40,
+          "local": 2
+        },
+        {
+          "index": 6,
+          "opcode": "LABEL",
+          "line": 40
+        },
+        {
+          "index": 7,
+          "opcode": "LINE",
+          "line": 41
+        },
+        {
+          "index": 8,
+          "opcode": "NEW",
+          "line": 41,
+          "type": "java/io/BufferedReader"
+        },
+        {
+          "index": 9,
+          "opcode": "DUP",
+          "line": 41
+        },
+        {
+          "index": 10,
+          "opcode": "NEW",
+          "line": 41,
+          "type": "java/io/InputStreamReader"
+        },
+        {
+          "index": 11,
+          "opcode": "DUP",
+          "line": 41
+        },
+        {
+          "index": 12,
+          "opcode": "ALOAD",
+          "line": 41,
+          "local": 2
+        },
+        {
+          "index": 13,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 41,
+          "callee": "java/lang/Process#getInputStream()Ljava/io/InputStream;"
+        },
+        {
+          "index": 14,
+          "opcode": "INVOKESPECIAL",
+          "line": 41,
+          "callee": "java/io/InputStreamReader#<init>(Ljava/io/InputStream;)V"
+        },
+        {
+          "index": 15,
+          "opcode": "INVOKESPECIAL",
+          "line": 41,
+          "callee": "java/io/BufferedReader#<init>(Ljava/io/Reader;)V"
+        },
+        {
+          "index": 16,
+          "opcode": "ASTORE",
+          "line": 41,
+          "local": 3
+        },
+        {
+          "index": 17,
+          "opcode": "LABEL",
+          "line": 41
+        },
+        {
+          "index": 18,
+          "opcode": "LINE",
+          "line": 42
+        },
+        {
+          "index": 19,
+          "opcode": "NEW",
+          "line": 42,
+          "type": "java/io/BufferedWriter"
+        },
+        {
+          "index": 20,
+          "opcode": "DUP",
+          "line": 42
+        },
+        {
+          "index": 21,
+          "opcode": "NEW",
+          "line": 42,
+          "type": "java/io/FileWriter"
+        },
+        {
+          "index": 22,
+          "opcode": "DUP",
+          "line": 42
+        },
+        {
+          "index": 23,
+          "opcode": "ALOAD",
+          "line": 42,
+          "local": 1
+        },
+        {
+          "index": 24,
+          "opcode": "INVOKESPECIAL",
+          "line": 42,
+          "callee": "java/io/FileWriter#<init>(Ljava/io/File;)V"
+        },
+        {
+          "index": 25,
+          "opcode": "INVOKESPECIAL",
+          "line": 42,
+          "callee": "java/io/BufferedWriter#<init>(Ljava/io/Writer;)V"
+        },
+        {
+          "index": 26,
+          "opcode": "ASTORE",
+          "line": 42,
+          "local": 4
+        },
+        {
+          "index": 27,
+          "opcode": "LABEL",
+          "line": 42
+        },
+        {
+          "index": 28,
+          "opcode": "LINE",
+          "line": 44
+        },
+        {
+          "index": 29,
+          "opcode": "ALOAD",
+          "line": 44,
+          "local": 3
+        },
+        {
+          "index": 30,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 44,
+          "callee": "java/io/BufferedReader#readLine()Ljava/lang/String;"
+        },
+        {
+          "index": 31,
+          "opcode": "ASTORE",
+          "line": 44,
+          "local": 5
+        },
+        {
+          "index": 32,
+          "opcode": "LABEL",
+          "line": 44
+        },
+        {
+          "index": 33,
+          "opcode": "LINE",
+          "line": 45
+        },
+        {
+          "index": 34,
+          "opcode": "ALOAD",
+          "line": 45,
+          "local": 5
+        },
+        {
+          "index": 35,
+          "opcode": "IFNONNULL",
+          "line": 45,
+          "target": 39
+        },
+        {
+          "index": 36,
+          "opcode": "LABEL",
+          "line": 45
+        },
+        {
+          "index": 37,
+          "opcode": "LINE",
+          "line": 46
+        },
+        {
+          "index": 38,
+          "opcode": "GOTO",
+          "line": 46,
+          "target": 50
+        },
+        {
+          "index": 39,
+          "opcode": "LABEL",
+          "line": 46
+        },
+        {
+          "index": 40,
+          "opcode": "LINE",
+          "line": 48
+        },
+        {
+          "index": 41,
+          "opcode": "ALOAD",
+          "line": 48,
+          "local": 4
+        },
+        {
+          "index": 42,
+          "opcode": "ALOAD",
+          "line": 48,
+          "local": 5
+        },
+        {
+          "index": 43,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 48,
+          "callee": "java/io/BufferedWriter#append(Ljava/lang/CharSequence;)Ljava/io/Writer;"
+        },
+        {
+          "index": 44,
+          "opcode": "BIPUSH",
+          "line": 48
+        },
+        {
+          "index": 45,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 48,
+          "callee": "java/io/Writer#append(C)Ljava/io/Writer;"
+        },
+        {
+          "index": 46,
+          "opcode": "POP",
+          "line": 48
+        },
+        {
+          "index": 47,
+          "opcode": "LABEL",
+          "line": 48
+        },
+        {
+          "index": 48,
+          "opcode": "LINE",
+          "line": 49
+        },
+        {
+          "index": 49,
+          "opcode": "GOTO",
+          "line": 49,
+          "target": 27
+        },
+        {
+          "index": 50,
+          "opcode": "LABEL",
+          "line": 49
+        },
+        {
+          "index": 51,
+          "opcode": "LINE",
+          "line": 50
+        },
+        {
+          "index": 52,
+          "opcode": "ALOAD",
+          "line": 50,
+          "local": 4
+        },
+        {
+          "index": 53,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 50,
+          "callee": "java/io/BufferedWriter#flush()V"
+        },
+        {
+          "index": 54,
+          "opcode": "LABEL",
+          "line": 50
+        },
+        {
+          "index": 55,
+          "opcode": "LINE",
+          "line": 51
+        },
+        {
+          "index": 56,
+          "opcode": "ALOAD",
+          "line": 51,
+          "local": 4
+        },
+        {
+          "index": 57,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 51,
+          "callee": "java/io/BufferedWriter#close()V"
+        },
+        {
+          "index": 58,
+          "opcode": "LABEL",
+          "line": 51
+        },
+        {
+          "index": 59,
+          "opcode": "LINE",
+          "line": 52
+        },
+        {
+          "index": 60,
+          "opcode": "ALOAD",
+          "line": 52,
+          "local": 3
+        },
+        {
+          "index": 61,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 52,
+          "callee": "java/io/BufferedReader#close()V"
+        },
+        {
+          "index": 62,
+          "opcode": "LABEL",
+          "line": 52
+        },
+        {
+          "index": 63,
+          "opcode": "LINE",
+          "line": 55
+        },
+        {
+          "index": 64,
+          "opcode": "GOTO",
+          "line": 55,
+          "target": 75
+        },
+        {
+          "index": 65,
+          "opcode": "LABEL",
+          "line": 55
+        },
+        {
+          "index": 66,
+          "opcode": "LINE",
+          "line": 53
+        },
+        {
+          "index": 67,
+          "opcode": "ASTORE",
+          "line": 53,
+          "local": 2
+        },
+        {
+          "index": 68,
+          "opcode": "LABEL",
+          "line": 53
+        },
+        {
+          "index": 69,
+          "opcode": "LINE",
+          "line": 54
+        },
+        {
+          "index": 70,
+          "opcode": "NEW",
+          "line": 54,
+          "type": "java/lang/RuntimeException"
+        },
+        {
+          "index": 71,
+          "opcode": "DUP",
+          "line": 54
+        },
+        {
+          "index": 72,
+          "opcode": "ALOAD",
+          "line": 54,
+          "local": 2
+        },
+        {
+          "index": 73,
+          "opcode": "INVOKESPECIAL",
+          "line": 54,
+          "callee": "java/lang/RuntimeException#<init>(Ljava/lang/Throwable;)V"
+        },
+        {
+          "index": 74,
+          "opcode": "ATHROW",
+          "line": 54
+        },
+        {
+          "index": 75,
+          "opcode": "LABEL",
+          "line": 54
+        },
+        {
+          "index": 76,
+          "opcode": "LINE",
+          "line": 56
+        },
+        {
+          "index": 77,
+          "opcode": "RETURN",
+          "line": 56
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 0,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "kind": "normal"
+        },
+        {
+          "from": 7,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "kind": "normal"
+        },
+        {
+          "from": 9,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "kind": "normal"
+        },
+        {
+          "from": 10,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "kind": "normal"
+        },
+        {
+          "from": 12,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "kind": "normal"
+        },
+        {
+          "from": 13,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "kind": "normal"
+        },
+        {
+          "from": 14,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 15,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "kind": "normal"
+        },
+        {
+          "from": 16,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "kind": "normal"
+        },
+        {
+          "from": 17,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "kind": "normal"
+        },
+        {
+          "from": 18,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "kind": "normal"
+        },
+        {
+          "from": 19,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "kind": "normal"
+        },
+        {
+          "from": 20,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "kind": "normal"
+        },
+        {
+          "from": 21,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 22,
+          "to": 23,
+          "kind": "normal"
+        },
+        {
+          "from": 22,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "kind": "normal"
+        },
+        {
+          "from": 23,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "kind": "normal"
+        },
+        {
+          "from": 24,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "kind": "normal"
+        },
+        {
+          "from": 25,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "kind": "normal"
+        },
+        {
+          "from": 26,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "kind": "normal"
+        },
+        {
+          "from": 27,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "kind": "normal"
+        },
+        {
+          "from": 28,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 29,
+          "to": 30,
+          "kind": "normal"
+        },
+        {
+          "from": 29,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 30,
+          "to": 31,
+          "kind": "normal"
+        },
+        {
+          "from": 30,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "kind": "normal"
+        },
+        {
+          "from": 31,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "kind": "normal"
+        },
+        {
+          "from": 32,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 33,
+          "to": 34,
+          "kind": "normal"
+        },
+        {
+          "from": 33,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 34,
+          "to": 35,
+          "kind": "normal"
+        },
+        {
+          "from": 34,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 35,
+          "to": 36,
+          "kind": "normal"
+        },
+        {
+          "from": 35,
+          "to": 39,
+          "kind": "normal"
+        },
+        {
+          "from": 35,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 36,
+          "to": 37,
+          "kind": "normal"
+        },
+        {
+          "from": 36,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 37,
+          "to": 38,
+          "kind": "normal"
+        },
+        {
+          "from": 37,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 38,
+          "to": 50,
+          "kind": "normal"
+        },
+        {
+          "from": 38,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 39,
+          "to": 40,
+          "kind": "normal"
+        },
+        {
+          "from": 39,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 40,
+          "to": 41,
+          "kind": "normal"
+        },
+        {
+          "from": 40,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 41,
+          "to": 42,
+          "kind": "normal"
+        },
+        {
+          "from": 41,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 42,
+          "to": 43,
+          "kind": "normal"
+        },
+        {
+          "from": 42,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 43,
+          "to": 44,
+          "kind": "normal"
+        },
+        {
+          "from": 43,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 44,
+          "to": 45,
+          "kind": "normal"
+        },
+        {
+          "from": 44,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 45,
+          "to": 46,
+          "kind": "normal"
+        },
+        {
+          "from": 45,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 46,
+          "to": 47,
+          "kind": "normal"
+        },
+        {
+          "from": 46,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 47,
+          "to": 48,
+          "kind": "normal"
+        },
+        {
+          "from": 47,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 48,
+          "to": 49,
+          "kind": "normal"
+        },
+        {
+          "from": 48,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 49,
+          "to": 27,
+          "kind": "normal"
+        },
+        {
+          "from": 49,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 50,
+          "to": 51,
+          "kind": "normal"
+        },
+        {
+          "from": 50,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 51,
+          "to": 52,
+          "kind": "normal"
+        },
+        {
+          "from": 51,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 52,
+          "to": 53,
+          "kind": "normal"
+        },
+        {
+          "from": 52,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 53,
+          "to": 54,
+          "kind": "normal"
+        },
+        {
+          "from": 53,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 54,
+          "to": 55,
+          "kind": "normal"
+        },
+        {
+          "from": 54,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 55,
+          "to": 56,
+          "kind": "normal"
+        },
+        {
+          "from": 55,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 56,
+          "to": 57,
+          "kind": "normal"
+        },
+        {
+          "from": 56,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 57,
+          "to": 58,
+          "kind": "normal"
+        },
+        {
+          "from": 57,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 58,
+          "to": 59,
+          "kind": "normal"
+        },
+        {
+          "from": 58,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 59,
+          "to": 60,
+          "kind": "normal"
+        },
+        {
+          "from": 59,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 60,
+          "to": 61,
+          "kind": "normal"
+        },
+        {
+          "from": 60,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 61,
+          "to": 62,
+          "kind": "normal"
+        },
+        {
+          "from": 61,
+          "to": 65,
+          "kind": "exception"
+        },
+        {
+          "from": 62,
+          "to": 63,
+          "kind": "normal"
+        },
+        {
+          "from": 63,
+          "to": 64,
+          "kind": "normal"
+        },
+        {
+          "from": 64,
+          "to": 75,
+          "kind": "normal"
+        },
+        {
+          "from": 65,
+          "to": 66,
+          "kind": "normal"
+        },
+        {
+          "from": 66,
+          "to": 67,
+          "kind": "normal"
+        },
+        {
+          "from": 67,
+          "to": 68,
+          "kind": "normal"
+        },
+        {
+          "from": 68,
+          "to": 69,
+          "kind": "normal"
+        },
+        {
+          "from": 69,
+          "to": 70,
+          "kind": "normal"
+        },
+        {
+          "from": 70,
+          "to": 71,
+          "kind": "normal"
+        },
+        {
+          "from": 71,
+          "to": 72,
+          "kind": "normal"
+        },
+        {
+          "from": 72,
+          "to": 73,
+          "kind": "normal"
+        },
+        {
+          "from": 73,
+          "to": 74,
+          "kind": "normal"
+        },
+        {
+          "from": 75,
+          "to": 76,
+          "kind": "normal"
+        },
+        {
+          "from": 76,
+          "to": 77,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;",
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "getDumpFile",
+      "descriptor": "(Landroid/content/Intent;)Ljava/io/File;",
+      "sourceFile": "InsecureLoggerService.java",
+      "access": 2,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 29
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 29,
+          "local": 1
+        },
+        {
+          "index": 3,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 29,
+          "callee": "android/content/Intent#getExtras()Landroid/os/Bundle;"
+        },
+        {
+          "index": 4,
+          "opcode": "LDC",
+          "line": 29,
+          "constantType": "String"
+        },
+        {
+          "index": 5,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 29,
+          "callee": "android/os/Bundle#get(Ljava/lang/String;)Ljava/lang/Object;"
+        },
+        {
+          "index": 6,
+          "opcode": "ASTORE",
+          "line": 29,
+          "local": 2
+        },
+        {
+          "index": 7,
+          "opcode": "LABEL",
+          "line": 29
+        },
+        {
+          "index": 8,
+          "opcode": "LINE",
+          "line": 30
+        },
+        {
+          "index": 9,
+          "opcode": "ALOAD",
+          "line": 30,
+          "local": 2
+        },
+        {
+          "index": 10,
+          "opcode": "INSTANCEOF",
+          "line": 30,
+          "type": "java/lang/String"
+        },
+        {
+          "index": 11,
+          "opcode": "IFEQ",
+          "line": 30,
+          "target": 20
+        },
+        {
+          "index": 12,
+          "opcode": "LABEL",
+          "line": 30
+        },
+        {
+          "index": 13,
+          "opcode": "LINE",
+          "line": 31
+        },
+        {
+          "index": 14,
+          "opcode": "NEW",
+          "line": 31,
+          "type": "java/io/File"
+        },
+        {
+          "index": 15,
+          "opcode": "DUP",
+          "line": 31
+        },
+        {
+          "index": 16,
+          "opcode": "ALOAD",
+          "line": 31,
+          "local": 2
+        },
+        {
+          "index": 17,
+          "opcode": "CHECKCAST",
+          "line": 31,
+          "type": "java/lang/String"
+        },
+        {
+          "index": 18,
+          "opcode": "INVOKESPECIAL",
+          "line": 31,
+          "callee": "java/io/File#<init>(Ljava/lang/String;)V"
+        },
+        {
+          "index": 19,
+          "opcode": "ARETURN",
+          "line": 31
+        },
+        {
+          "index": 20,
+          "opcode": "LABEL",
+          "line": 31
+        },
+        {
+          "index": 21,
+          "opcode": "LINE",
+          "line": 32
+        },
+        {
+          "index": 22,
+          "opcode": "ALOAD",
+          "line": 32,
+          "local": 2
+        },
+        {
+          "index": 23,
+          "opcode": "INSTANCEOF",
+          "line": 32,
+          "type": "java/io/File"
+        },
+        {
+          "index": 24,
+          "opcode": "IFEQ",
+          "line": 32,
+          "target": 30
+        },
+        {
+          "index": 25,
+          "opcode": "LABEL",
+          "line": 32
+        },
+        {
+          "index": 26,
+          "opcode": "LINE",
+          "line": 33
+        },
+        {
+          "index": 27,
+          "opcode": "ALOAD",
+          "line": 33,
+          "local": 2
+        },
+        {
+          "index": 28,
+          "opcode": "CHECKCAST",
+          "line": 33,
+          "type": "java/io/File"
+        },
+        {
+          "index": 29,
+          "opcode": "ARETURN",
+          "line": 33
+        },
+        {
+          "index": 30,
+          "opcode": "LABEL",
+          "line": 33
+        },
+        {
+          "index": 31,
+          "opcode": "LINE",
+          "line": 35
+        },
+        {
+          "index": 32,
+          "opcode": "NEW",
+          "line": 35,
+          "type": "java/lang/IllegalArgumentException"
+        },
+        {
+          "index": 33,
+          "opcode": "DUP",
+          "line": 35
+        },
+        {
+          "index": 34,
+          "opcode": "INVOKESPECIAL",
+          "line": 35,
+          "callee": "java/lang/IllegalArgumentException#<init>()V"
+        },
+        {
+          "index": 35,
+          "opcode": "ATHROW",
+          "line": 35
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "kind": "normal"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "kind": "normal"
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 20,
+          "kind": "normal"
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "kind": "normal"
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "kind": "normal"
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "kind": "normal"
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "kind": "normal"
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "kind": "normal"
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "kind": "normal"
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "kind": "normal"
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "kind": "normal"
+        },
+        {
+          "from": 22,
+          "to": 23,
+          "kind": "normal"
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "kind": "normal"
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "kind": "normal"
+        },
+        {
+          "from": 24,
+          "to": 30,
+          "kind": "normal"
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "kind": "normal"
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "kind": "normal"
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "kind": "normal"
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "kind": "normal"
+        },
+        {
+          "from": 30,
+          "to": 31,
+          "kind": "normal"
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "kind": "normal"
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "kind": "normal"
+        },
+        {
+          "from": 33,
+          "to": 34,
+          "kind": "normal"
+        },
+        {
+          "from": 34,
+          "to": 35,
+          "kind": "normal"
+        }
+      ]
+    },
+    {
+      "id": "oversecured/ovaa/services/InsecureLoggerService#onHandleIntent(Landroid/content/Intent;)V",
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "onHandleIntent",
+      "descriptor": "(Landroid/content/Intent;)V",
+      "sourceFile": "InsecureLoggerService.java",
+      "access": 4,
+      "instructions": [
+        {
+          "index": 0,
+          "opcode": "LABEL",
+          "line": -1
+        },
+        {
+          "index": 1,
+          "opcode": "LINE",
+          "line": 23
+        },
+        {
+          "index": 2,
+          "opcode": "ALOAD",
+          "line": 23,
+          "local": 1
+        },
+        {
+          "index": 3,
+          "opcode": "IFNULL",
+          "line": 23,
+          "target": 16
+        },
+        {
+          "index": 4,
+          "opcode": "LDC",
+          "line": 23,
+          "constantType": "String"
+        },
+        {
+          "index": 5,
+          "opcode": "ALOAD",
+          "line": 23,
+          "local": 1
+        },
+        {
+          "index": 6,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 23,
+          "callee": "android/content/Intent#getAction()Ljava/lang/String;"
+        },
+        {
+          "index": 7,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 23,
+          "callee": "java/lang/String#equals(Ljava/lang/Object;)Z"
+        },
+        {
+          "index": 8,
+          "opcode": "IFEQ",
+          "line": 23,
+          "target": 16
+        },
+        {
+          "index": 9,
+          "opcode": "LABEL",
+          "line": 23
+        },
+        {
+          "index": 10,
+          "opcode": "LINE",
+          "line": 24
+        },
+        {
+          "index": 11,
+          "opcode": "ALOAD",
+          "line": 24,
+          "local": 0
+        },
+        {
+          "index": 12,
+          "opcode": "ALOAD",
+          "line": 24,
+          "local": 0
+        },
+        {
+          "index": 13,
+          "opcode": "ALOAD",
+          "line": 24,
+          "local": 1
+        },
+        {
+          "index": 14,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 24,
+          "callee": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;"
+        },
+        {
+          "index": 15,
+          "opcode": "INVOKEVIRTUAL",
+          "line": 24,
+          "callee": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V"
+        },
+        {
+          "index": 16,
+          "opcode": "LABEL",
+          "line": 24
+        },
+        {
+          "index": 17,
+          "opcode": "LINE",
+          "line": 26
+        },
+        {
+          "index": 18,
+          "opcode": "RETURN",
+          "line": 26
+        }
+      ],
+      "instructionIndexMeaning": "ASM instruction-list index, including labels and line-number nodes",
+      "analysisStatus": "analyzed",
+      "cfgEdges": [
+        {
+          "from": 0,
+          "to": 1,
+          "kind": "normal"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "kind": "normal"
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "kind": "normal"
+        },
+        {
+          "from": 3,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "kind": "normal"
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "kind": "normal"
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "kind": "normal"
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "kind": "normal"
+        },
+        {
+          "from": 8,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "kind": "normal"
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "kind": "normal"
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "kind": "normal"
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "kind": "normal"
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "kind": "normal"
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "kind": "normal"
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "kind": "normal"
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "kind": "normal"
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "kind": "normal"
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "caller": "androidx/appcompat/app/AppCompatActivity#<init>()V",
+      "instruction": 3,
+      "line": 4,
+      "owner": "android/app/Activity",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/R#<init>()V",
+      "instruction": 3,
+      "line": 4,
+      "owner": "java/lang/Object",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/R$id#<init>()V",
+      "instruction": 3,
+      "line": 6,
+      "owner": "java/lang/Object",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/R$layout#<init>()V",
+      "instruction": 3,
+      "line": 5,
+      "owner": "java/lang/Object",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#<init>()V",
+      "instruction": 3,
+      "line": 12,
+      "owner": "androidx/appcompat/app/AppCompatActivity",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 4,
+      "line": 15,
+      "owner": "androidx/appcompat/app/AppCompatActivity",
+      "name": "onCreate",
+      "descriptor": "(Landroid/os/Bundle;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 9,
+      "line": 16,
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "setContentView",
+      "descriptor": "(I)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 14,
+      "line": 18,
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "findViewById",
+      "descriptor": "(I)Landroid/view/View;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 21,
+      "line": 19,
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "setupWebView",
+      "descriptor": "(Landroid/webkit/WebView;)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 26,
+      "line": 20,
+      "owner": "oversecured/ovaa/activities/WebViewActivity",
+      "name": "getIntent",
+      "descriptor": "()Landroid/content/Intent;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 28,
+      "line": 20,
+      "owner": "android/content/Intent",
+      "name": "getStringExtra",
+      "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+      "instruction": 29,
+      "line": 20,
+      "owner": "android/webkit/WebView",
+      "name": "loadUrl",
+      "descriptor": "(Ljava/lang/String;)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 5,
+      "line": 24,
+      "owner": "android/webkit/WebChromeClient",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 6,
+      "line": 24,
+      "owner": "android/webkit/WebView",
+      "name": "setWebChromeClient",
+      "descriptor": "(Landroid/webkit/WebChromeClient;)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 12,
+      "line": 25,
+      "owner": "android/webkit/WebViewClient",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 13,
+      "line": 25,
+      "owner": "android/webkit/WebView",
+      "name": "setWebViewClient",
+      "descriptor": "(Landroid/webkit/WebViewClient;)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 17,
+      "line": 26,
+      "owner": "android/webkit/WebView",
+      "name": "getSettings",
+      "descriptor": "()Landroid/webkit/WebSettings;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 19,
+      "line": 26,
+      "owner": "android/webkit/WebSettings",
+      "name": "setJavaScriptEnabled",
+      "descriptor": "(Z)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 23,
+      "line": 27,
+      "owner": "android/webkit/WebView",
+      "name": "getSettings",
+      "descriptor": "()Landroid/webkit/WebSettings;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V",
+      "instruction": 25,
+      "line": 27,
+      "owner": "android/webkit/WebSettings",
+      "name": "setAllowFileAccessFromFileURLs",
+      "descriptor": "(Z)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#<init>()V",
+      "instruction": 4,
+      "line": 18,
+      "owner": "android/app/IntentService",
+      "name": "<init>",
+      "descriptor": "(Ljava/lang/String;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 2,
+      "line": 40,
+      "owner": "java/lang/Runtime",
+      "name": "getRuntime",
+      "descriptor": "()Ljava/lang/Runtime;",
+      "opcode": "INVOKESTATIC",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 4,
+      "line": 40,
+      "owner": "java/lang/Runtime",
+      "name": "exec",
+      "descriptor": "(Ljava/lang/String;)Ljava/lang/Process;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 13,
+      "line": 41,
+      "owner": "java/lang/Process",
+      "name": "getInputStream",
+      "descriptor": "()Ljava/io/InputStream;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 14,
+      "line": 41,
+      "owner": "java/io/InputStreamReader",
+      "name": "<init>",
+      "descriptor": "(Ljava/io/InputStream;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 15,
+      "line": 41,
+      "owner": "java/io/BufferedReader",
+      "name": "<init>",
+      "descriptor": "(Ljava/io/Reader;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 24,
+      "line": 42,
+      "owner": "java/io/FileWriter",
+      "name": "<init>",
+      "descriptor": "(Ljava/io/File;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 25,
+      "line": 42,
+      "owner": "java/io/BufferedWriter",
+      "name": "<init>",
+      "descriptor": "(Ljava/io/Writer;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 30,
+      "line": 44,
+      "owner": "java/io/BufferedReader",
+      "name": "readLine",
+      "descriptor": "()Ljava/lang/String;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 43,
+      "line": 48,
+      "owner": "java/io/BufferedWriter",
+      "name": "append",
+      "descriptor": "(Ljava/lang/CharSequence;)Ljava/io/Writer;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 45,
+      "line": 48,
+      "owner": "java/io/Writer",
+      "name": "append",
+      "descriptor": "(C)Ljava/io/Writer;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 53,
+      "line": 50,
+      "owner": "java/io/BufferedWriter",
+      "name": "flush",
+      "descriptor": "()V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 57,
+      "line": 51,
+      "owner": "java/io/BufferedWriter",
+      "name": "close",
+      "descriptor": "()V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 61,
+      "line": 52,
+      "owner": "java/io/BufferedReader",
+      "name": "close",
+      "descriptor": "()V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 73,
+      "line": 54,
+      "owner": "java/lang/RuntimeException",
+      "name": "<init>",
+      "descriptor": "(Ljava/lang/Throwable;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;",
+      "instruction": 3,
+      "line": 29,
+      "owner": "android/content/Intent",
+      "name": "getExtras",
+      "descriptor": "()Landroid/os/Bundle;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;",
+      "instruction": 5,
+      "line": 29,
+      "owner": "android/os/Bundle",
+      "name": "get",
+      "descriptor": "(Ljava/lang/String;)Ljava/lang/Object;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;",
+      "instruction": 18,
+      "line": 31,
+      "owner": "java/io/File",
+      "name": "<init>",
+      "descriptor": "(Ljava/lang/String;)V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;",
+      "instruction": 34,
+      "line": 35,
+      "owner": "java/lang/IllegalArgumentException",
+      "name": "<init>",
+      "descriptor": "()V",
+      "opcode": "INVOKESPECIAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#onHandleIntent(Landroid/content/Intent;)V",
+      "instruction": 6,
+      "line": 23,
+      "owner": "android/content/Intent",
+      "name": "getAction",
+      "descriptor": "()Ljava/lang/String;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#onHandleIntent(Landroid/content/Intent;)V",
+      "instruction": 7,
+      "line": 23,
+      "owner": "java/lang/String",
+      "name": "equals",
+      "descriptor": "(Ljava/lang/Object;)Z",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#onHandleIntent(Landroid/content/Intent;)V",
+      "instruction": 14,
+      "line": 24,
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "getDumpFile",
+      "descriptor": "(Landroid/content/Intent;)Ljava/io/File;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    },
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#onHandleIntent(Landroid/content/Intent;)V",
+      "instruction": 15,
+      "line": 24,
+      "owner": "oversecured/ovaa/services/InsecureLoggerService",
+      "name": "dumpLogs",
+      "descriptor": "(Ljava/io/File;)V",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-e01939841f4b8794b880183b",
+      "rule": "webview-url",
+      "kind": "potential-taint-flow",
+      "source": {
+        "rule": "intent-string-extra",
+        "method": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+        "instruction": 28,
+        "sourceFile": "WebViewActivity.java",
+        "line": 20,
+        "owner": "android/content/Intent",
+        "name": "getStringExtra",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/String;"
+      },
+      "sink": {
+        "rule": "webview-url",
+        "method": "oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V",
+        "instruction": 29,
+        "sourceFile": "WebViewActivity.java",
+        "line": 20,
+        "argument": 0,
+        "owner": "android/webkit/WebView",
+        "name": "loadUrl",
+        "descriptor": "(Ljava/lang/String;)V"
+      },
+      "valueTaintOrigin": "intent-string-extra:oversecured/ovaa/activities/WebViewActivity#onCreate(Landroid/os/Bundle;)V@28",
+      "uncertainty": [
+        "Android/runtime entry-point reachability is unproven",
+        "Branch feasibility is not checked; joined control-flow paths may be infeasible"
+      ],
+      "evidence": "Source provenance is present in this sink argument at the converged ASM frame; no full execution witness is claimed"
+    }
+  ],
+  "warnings": [
+    "androidx/appcompat/app/AppCompatActivity#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/R#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/R$id#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/R$layout#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/activities/WebViewActivity#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/activities/WebViewActivity#setupWebView(Landroid/webkit/WebView;)V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/services/InsecureLoggerService#<init>()V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V: constructor/receiver mutation is not modeled",
+    "oversecured/ovaa/services/InsecureLoggerService#getDumpFile(Landroid/content/Intent;)Ljava/io/File;: constructor/receiver mutation is not modeled"
+  ],
+  "compactReport": {
+    "emittedFindings": 1,
+    "omittedFindings": 0,
+    "characterBudget": 24000,
+    "characters": 2525,
+    "tokenCount": "not-measured"
+  }
+}
