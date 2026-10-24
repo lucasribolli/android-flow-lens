@@ -1,0 +1,24 @@
+> Task :android-flow-lens:core:compileJava UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:compileJava UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:processResources UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:classes UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:jar UP-TO-DATE
+> Task :android-flow-lens:core:processResources NO-SOURCE
+> Task :android-flow-lens:core:classes UP-TO-DATE
+> Task :android-flow-lens:core:jar UP-TO-DATE
+> Task :android-flow-lens:core:standaloneJar
+> Task :android-flow-lens:core:compileTestJava
+> Task :android-flow-lens:core:processTestResources NO-SOURCE
+> Task :android-flow-lens:core:testClasses
+> Task :android-flow-lens:core:test
+> Task :android-flow-lens:gradle-plugin:standaloneJar
+> Task :android-flow-lens:gradle-plugin:compileTestJava
+> Task :android-flow-lens:gradle-plugin:pluginUnderTestMetadata
+> Task :android-flow-lens:gradle-plugin:processTestResources NO-SOURCE
+> Task :android-flow-lens:gradle-plugin:testClasses
+> Task :android-flow-lens:gradle-plugin:test
+> Task :android-flow-lens:gradle-plugin:validatePlugins
+
+BUILD SUCCESSFUL in 21s
+14 actionable tasks: 8 executed, 6 up-to-date

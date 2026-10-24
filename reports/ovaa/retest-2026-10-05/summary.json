@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-05",
+  "project": "/home/lucas/Documents/source-codes/ovaa",
+  "agp": "8.5.1",
+  "gradle": "8.7",
+  "jdk": "21",
+  "gradleHeap": "1536m",
+  "status": "passed",
+  "analysis": {
+    "engine": "asm-explicit-value-taint",
+    "status": "complete-within-declared-scope",
+    "scope": "intraprocedural",
+    "classCount": 5557.0,
+    "methodCount": 41951.0,
+    "analyzedMethodCount": 40135.0,
+    "failedMethodCount": 0.0,
+    "findingCount": 1.0,
+    "reachability": "all-input-methods; Android/runtime reachability unproven",
+    "findingMeaning": "potential explicit-value flow, not proof of exploitability",
+    "coverage": [
+      "Intraprocedural only: callees are not analyzed in calling context; all input methods are analyzed independently.",
+      "No Android entry-point reachability, lifecycle, callback or inter-component communication model.",
+      "No heap, field contents, array contents, object alias or receiver-mutation tracking.",
+      "No reflection target resolution, JNI/native analysis or dynamically loaded code analysis.",
+      "No implicit/control-dependence taint, branch feasibility proof or sanitizer models.",
+      "No virtual dispatch resolution: call records are bytecode-declared targets, not a resolved call graph.",
+      "No dedicated coroutine, Compose, Flow/Rx or framework/library semantic models.",
+      "Unknown call returns conservatively inherit receiver/argument taint; this can produce false positives.",
+      "Multi-release JAR version overlays are excluded; only base .class entries are analyzed.",
+      "Rules match exact JVM owner/name/descriptor; inherited declarations and overloads need their own rules.",
+      "Missing debug information leaves source files or line numbers unavailable; input obfuscation is not reversed."
+    ],
+    "rules": [
+      {
+        "id": "intent-string-extra",
+        "kind": "source",
+        "owner": "android/content/Intent",
+        "name": "getStringExtra",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/String;",
+        "argument": -1.0
+      },
+      {
+        "id": "runtime-exec",
+        "kind": "sink",
+        "owner": "java/lang/Runtime",
+        "name": "exec",
+        "descriptor": "(Ljava/lang/String;)Ljava/lang/Process;",
+        "argument": 0.0
+      },
+      {
+        "id": "sql-exec",
+        "kind": "sink",
+        "owner": "android/database/sqlite/SQLiteDatabase",
+        "name": "execSQL",
+        "descriptor": "(Ljava/lang/String;)V",
+        "argument": 0.0
+      },
+      {
+        "id": "sql-exec-bind",
+        "kind": "sink",
+        "owner": "android/database/sqlite/SQLiteDatabase",
+        "name": "execSQL",
+        "descriptor": "(Ljava/lang/String;[Ljava/lang/Object;)V",
+        "argument": 0.0
+      },
+      {
+        "id": "webview-url",
+        "kind": "sink",
+        "owner": "android/webkit/WebView",
+        "name": "loadUrl",
+        "descriptor": "(Ljava/lang/String;)V",
+        "argument": 0.0
+      }
+    ]
+  },
+  "reportBytes": 363928498,
+  "compactBytes": 2532,
+  "compactCharacters": 2532,
+  "tokenCount": "not-measured",
+  "automatedTests": {
+    "total": 20,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "device": {
+    "device": "moto g(8) play",
+    "android": "10",
+    "appPid": "8360",
+    "foreground": [
+      "mResumedActivity: ActivityRecord{4ca1f40 u0 oversecured.ovaa/.activities.WebViewActivity t24}"
+    ],
+    "fatalExceptionInAppLog": false,
+    "appLogBytes": 5595
+  },
+  "apk": {
+    "path": "/home/lucas/Documents/source-codes/ovaa/app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "994f0e1a22ede1f76b7404909aa95a8bfcbe75580b0732cdb86cd92cc9856945"
+  },
+  "pluginJar": {
+    "path": "/home/lucas/Documents/Codex/2026-09-25/new-chat/outputs/android-flow-lens/gradle-plugin/build/libs/flow-lens-gradle-0.1.0-SNAPSHOT-all.jar",
+    "sha256": "f78b74b1e236469582164081833a1fced0a8eb16e4c7f1245e97013b56db24c6",
+    "bytes": 655416
+  },
+  "runtimeValidation": "ADB install -r succeeded; exported deeplink routed to WebViewActivity and https://example.com loaded visibly; Mobile MCP confirmed foreground package and page hierarchy.",
+  "frida": "Attached using MCP, but Java bridge was unavailable; no source/sink hooks ran. Session detached without terminating the app.",
+  "standaloneJarValidation": {
+    "status": "passed",
+    "loadMethod": "buildscript classpath files + apply plugin (no includeBuild)",
+    "reportComparison": {
+      "analysis.json": {
+        "byteIdentical": true,
+        "sourceSha256": "fede48bb5171f67cc4b4e7ddf0b24c05fd8e3e7459db4fd6b41c7054f010b2da",
+        "jarSha256": "fede48bb5171f67cc4b4e7ddf0b24c05fd8e3e7459db4fd6b41c7054f010b2da"
+      },
+      "llm.md": {
+        "byteIdentical": true,
+        "sourceSha256": "aae49320f383ec9985949eacb30e9c2243d9bfb777a80dfd7d4f05e906d651e8",
+        "jarSha256": "aae49320f383ec9985949eacb30e9c2243d9bfb777a80dfd7d4f05e906d651e8"
+      }
+    },
+    "buildSeconds": 14,
+    "jarContent": {
+      "bytes": 655416,
+      "entries": 421,
+      "hostGradleAgpGroovyKotlinClassesBundled": false,
+      "pluginCoreAsmGsonAndDescriptorPresent": true
+    }
+  },
+  "fixes": [
+    "Reports.write streams JSON via BufferedWriter instead of building the full JSON String in heap.",
+    "Standalone Gradle plugin JAR packages analyzer runtime only, excluding host Gradle/Groovy/Kotlin APIs."
+  ]
+}

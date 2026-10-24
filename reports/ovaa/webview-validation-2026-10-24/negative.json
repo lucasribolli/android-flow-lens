@@ -1,0 +1,45 @@
+{
+  "testedAt": "2026-10-24T14:44:13.992439+00:00",
+  "label": "negative",
+  "inputUri": "oversecured://ovaa/webview?url=https%3A%2F%2Fwww.w3.org%2F",
+  "forceStop": {
+    "command": [
+      "/home/lucas/Documents/Codex/2026-09-17/x20/work/android-sdk/platform-tools/adb",
+      "-s",
+      "cda39059",
+      "shell",
+      "am",
+      "force-stop",
+      "oversecured.ovaa"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "launch": {
+    "command": [
+      "/home/lucas/Documents/Codex/2026-09-17/x20/work/android-sdk/platform-tools/adb",
+      "-s",
+      "cda39059",
+      "shell",
+      "am",
+      "start",
+      "-W",
+      "-n",
+      "oversecured.ovaa/.activities.DeeplinkActivity",
+      "-a",
+      "android.intent.action.VIEW",
+      "-c",
+      "android.intent.category.BROWSABLE",
+      "-d",
+      "oversecured://ovaa/webview?url=https%3A%2F%2Fwww.w3.org%2F"
+    ],
+    "exitCode": 0,
+    "stdout": "Starting: Intent { act=android.intent.action.VIEW cat=[android.intent.category.BROWSABLE] dat=oversecured://ovaa/webview?url=https://www.w3.org/ cmp=oversecured.ovaa/.activities.DeeplinkActivity }\nStatus: ok\nLaunchState: UNKNOWN (-1)\nActivity: com.miui.home/.launcher.Launcher\nWaitTime: 808\nComplete\n",
+    "stderr": ""
+  },
+  "foreground": [
+    "mResumedActivity: ActivityRecord{fb1bd5 u0 com.miui.home/.launcher.Launcher t1}"
+  ],
+  "pid": "8506"
+}

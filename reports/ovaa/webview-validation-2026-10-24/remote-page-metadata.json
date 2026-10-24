@@ -1,0 +1,9 @@
+{
+  "url": "https://evilexample.com/",
+  "httpStatus": 200,
+  "contentType": "text/html",
+  "htmlSha256": "4969121049000ddc4a2969d463f93a6caf81cf536539ea44ac660048c1d34787",
+  "htmlTitle": "Test Page. Evilexample.com",
+  "containsCatBackground": true,
+  "checkedAt": "2026-10-24T14:45:22.116124+00:00"
+}

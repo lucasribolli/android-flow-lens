@@ -1,5 +1,15 @@
 # OVAA analysis run
 
+## WebView validada no dispositivo — 2026-10-24
+
+O bypass do filtro de host foi reproduzido no Redmi Note 8 com `https://evilexample.com/`. Consulte [os comandos ADB, o controle negativo e a captura](webview-validation-2026-10-24/README.md). O teste anterior com `https://example.com/` não comprovava esse bypass.
+
+## Current result — 2026-10-05
+
+The real OVAA Gradle build, Flow Lens analysis, and connected-device smoke test now pass. See [the complete retest report](retest-2026-10-05/README.md), including the memory fix discovered by this integration test. The current checkout retains SDK 34, NDK 27, and its native CMake build. The historical `ovaa-gradle-sync.patch` is no longer the recommended integration; the minimal integration already applied is captured in `retest-2026-10-05/ovaa-integration.patch`.
+
+## Historical partial run — 2026-09-25
+
 This report was produced from the Oversecured OVAA source tree's `WebViewActivity.java` and `InsecureLoggerService.java` bytecode. The classes were compiled with the Android 35 platform stubs plus a compile-only stub for AndroidX and generated resources; application code was never loaded or executed.
 
 The analyzer found one candidate flow:

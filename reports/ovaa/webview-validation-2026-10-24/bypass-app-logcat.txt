@@ -1,0 +1,79 @@
+--------- beginning of main
+10-24 11:44:17.884 I/versecured.ova( 8644): Late-enabling -Xcheck:jni
+10-24 11:44:17.912 E/versecured.ova( 8644): Unknown bits set in runtime_flags: 0x8000
+10-24 11:44:18.185 I/Perf    ( 8644): Connecting to perf service.
+10-24 11:44:18.220 I/FeatureParser( 8644): can't find ginkgo.xml in assets/device_features/,it may be in /system/etc/device_features
+10-24 11:44:18.235 E/libc    ( 8644): Access denied finding property "ro.vendor.df.effect.conflict"
+10-24 11:44:18.338 D/AppCompatDelegate( 8644): Checking for metadata for AppLocalesMetadataHolderService : Service not found
+--------- beginning of system
+10-24 11:44:18.371 I/Timeline( 8644): Timeline: Activity_launch_request time:11683439
+10-24 11:44:18.410 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.DeeplinkActivity@64e1354
+10-24 11:44:18.430 W/Looper  ( 8644): Slow Looper main: Activity oversecured.ovaa/.activities.DeeplinkActivity is 336ms late (wall=0ms running=0ms ClientTransaction{ callbacks=[android.app.servertransaction.TopResumedActivityChangeItem] }) because of 2 msg, msg 1 took 362ms (seq=2 running=293ms runnable=11ms late=1ms h=android.app.ActivityThread$H w=110), msg 2 took 121ms (seq=3 running=92ms runnable=7ms late=215ms h=android.app.ActivityThread$H w=159)
+10-24 11:44:18.414 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.DeeplinkActivity@64e1354
+10-24 11:44:18.442 W/ActivityThread( 8644): handleWindowVisibility: no activity for token android.os.BinderProxy@ea5ef20
+10-24 11:44:18.458 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.WebViewActivity@cf52f76
+10-24 11:44:18.459 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.WebViewActivity@cf52f76
+10-24 11:44:18.499 W/versecured.ova( 8644): Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+10-24 11:44:18.515 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.WebViewActivity@cf52f76
+10-24 11:44:18.520 D/ForceDarkHelper( 8644): updateByCheckExcludeList: pkg: oversecured.ovaa activity: oversecured.ovaa.activities.WebViewActivity@cf52f76
+10-24 11:44:18.541 I/WebViewFactory( 8644): Loading com.google.android.webview version 155.0.8059.43 (code 805904303)
+10-24 11:44:18.572 W/linker  ( 8644): Warning: "/data/app/com.google.android.webview-821LhhNBWxnu4Ik4yDU9YA==/base.apk!/lib/arm64-v8a/libwebviewchromium.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+10-24 11:44:18.667 I/cr_WVCFactoryProvider( 8644): version=155.0.8059.43 (805904303) minSdkVersion=29 multiprocess=true packageId=127 splits=<none>
+10-24 11:44:18.688 I/chromium( 8644): [1024/114418.683091:INFO:android_webview/browser/variations/variations_seed_loader.cc:63] Failed to open file for reading.: No such file or directory (2)
+10-24 11:44:18.688 I/chromium( 8644): [1024/114418.688401:INFO:android_webview/browser/variations/variations_seed_loader.cc:63] Failed to open file for reading.: No such file or directory (2)
+10-24 11:44:18.757 I/cr_LibraryLoader( 8644): Successfully loaded native library
+10-24 11:44:18.763 I/cr_CachingUmaRecorder( 8644): Flushed 39 samples from 14 histograms, 0 samples were dropped.
+10-24 11:44:18.765 I/cr_ChildProcLH( 8644): ScopedServiceBindingBatch.tryActivate: false
+10-24 11:44:18.787 I/cr_CombinedPProvider( 8644): #registerProvider() provider:WV.fj@6f8624f isPolicyCacheEnabled:false policyProvidersSize:0
+10-24 11:44:18.788 I/cr_PolicyProvider( 8644): #setManagerAndSource() 0
+10-24 11:44:18.789 I/cr_policy( 8644): registerReceiver succeeded after 2ms
+10-24 11:44:18.793 I/cr_DisplayManager( 8644): Is Display Topology available: false
+10-24 11:44:18.838 I/cr_CombinedPProvider( 8644): #linkNativeInternal() 1
+10-24 11:44:18.841 I/cr_AppResProvider( 8644): #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-24 11:44:18.842 I/cr_PolicyProvider( 8644): #notifySettingsAvailable() 0
+10-24 11:44:18.842 I/cr_CombinedPProvider( 8644): #onSettingsAvailable() 0
+10-24 11:44:18.842 I/cr_CombinedPProvider( 8644): #flushPolicies()
+10-24 11:44:18.908 W/chromium( 8644): [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+10-24 11:44:18.930 E/libc    ( 8644): Access denied finding property "ro.vendor.api_level"
+10-24 11:44:19.041 D/EgretLoader( 8644): EgretLoader(Context context)
+10-24 11:44:19.044 D/EgretLoader( 8644): The context is not activity
+10-24 11:44:19.067 I/AdrenoGLES( 8644): QUALCOMM build                   : d20ce1a, Ia11ce2d146
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Build Date                       : 12/15/20
+10-24 11:44:19.067 I/AdrenoGLES( 8644): OpenGL ES Shader Compiler Version: EV031.27.05.03
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Local Branch                     : 
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.8.11.R1.10.00.00.576.024
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Remote Branch                    : NONE
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Reconstruct Branch               : NOTHING
+10-24 11:44:19.067 I/AdrenoGLES( 8644): Build Config                     : S P 8.0.12 AArch64
+10-24 11:44:19.071 I/AdrenoGLES( 8644): PFP: 0x016ee187, ME: 0x00000000
+10-24 11:44:19.073 W/cr_media( 8644): getBluetoothAdapter() requires BLUETOOTH permission
+10-24 11:44:19.073 W/cr_media( 8644): registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+10-24 11:44:19.084 W/Activity( 8644): Slow Operation: Activity oversecured.ovaa/.activities.WebViewActivity onCreate took 635ms
+10-24 11:44:19.140 I/cr_AppResProvider( 8644): #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-24 11:44:19.141 I/cr_PolicyProvider( 8644): #notifySettingsAvailable() 0
+10-24 11:44:19.141 I/cr_CombinedPProvider( 8644): #onSettingsAvailable() 0
+10-24 11:44:19.141 I/cr_CombinedPProvider( 8644): #flushPolicies()
+10-24 11:44:19.143 W/Looper  ( 8644): Slow Looper main: Activity oversecured.ovaa/.activities.WebViewActivity is 701ms late (wall=0ms running=0ms ClientTransaction{ callbacks=[android.app.servertransaction.TopResumedActivityChangeItem] }) because of 4 msg, msg 4 took 680ms (seq=10 running=350ms runnable=30ms io=221ms late=1ms h=android.app.ActivityThread$H w=159)
+10-24 11:44:19.145 I/CameraManagerGlobal( 8644): Connecting to camera service
+10-24 11:44:19.166 W/CameraManagerGlobal( 8644): [soar.cts] ignore the status update of camera: 20
+10-24 11:44:19.166 W/CameraManagerGlobal( 8644): [soar.cts] ignore the status update of camera: 21
+10-24 11:44:19.167 W/CameraManagerGlobal( 8644): [soar.cts] ignore the status update of camera: 22
+10-24 11:44:19.167 W/CameraManagerGlobal( 8644): [soar.cts] ignore the status update of camera: 61
+10-24 11:44:19.167 W/CameraManagerGlobal( 8644): ignore the torch status update of camera: 21
+10-24 11:44:19.168 W/CameraManagerGlobal( 8644): ignore the torch status update of camera: 22
+10-24 11:44:19.168 W/CameraManagerGlobal( 8644): ignore the torch status update of camera: 61
+10-24 11:44:19.190 W/ContentCatcher( 8644): Failed to notify a WebView
+10-24 11:44:19.223 W/versecured.ova( 8644): Accessing hidden method Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl; (greylist, reflection, allowed)
+10-24 11:44:19.224 W/versecured.ova( 8644): Accessing hidden field Landroid/view/View$AttachInfo;->mVisibleInsets:Landroid/graphics/Rect; (greylist, reflection, allowed)
+10-24 11:44:19.224 W/versecured.ova( 8644): Accessing hidden field Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo; (greylist, reflection, allowed)
+10-24 11:44:19.295 W/Gralloc3( 8644): mapper 3.x is not supported
+10-24 11:44:19.433 W/VideoCapabilities( 8644): Unsupported mime image/vnd.android.heic
+10-24 11:44:19.443 W/VideoCapabilities( 8644): Unsupported mime video/divx
+10-24 11:44:19.445 W/VideoCapabilities( 8644): Unsupported mime video/divx4
+10-24 11:44:19.453 W/VideoCapabilities( 8644): Unrecognized profile/level 0/3 for video/mpeg2
+10-24 11:44:19.455 W/VideoCapabilities( 8644): Unrecognized profile/level 0/3 for video/mpeg2
+10-24 11:44:20.087 D/NetworkSecurityConfig( 8644): No Network Security Config specified, using platform default
+10-24 11:44:21.087 W/RenderInspector( 8644): QueueBuffer time out on oversecured.ovaa/oversecured.ovaa.activities.WebViewActivity, count=1, avg=54 ms, max=54 ms.
+10-24 11:44:24.277 D/ProfileInstaller( 8644): Installing profile for oversecured.ovaa
+10-24 11:44:25.220 W/versecured.ova( 8644): Accessing hidden method Landroid/view/MotionEvent;->getEventTimeNano()J (greylist, reflection, allowed)
+10-24 11:44:26.210 I/versecured.ova( 8644): ProcessProfilingInfo new_methods=1523 is saved saved_to_disk=1 resolve_classes_delay=8000

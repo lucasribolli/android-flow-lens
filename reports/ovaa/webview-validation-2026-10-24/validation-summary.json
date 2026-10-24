@@ -1,0 +1,10 @@
+{
+  "negativeReturnedToLauncher": true,
+  "bypassOpenedWebView": true,
+  "bypassActivityReportedByAmStart": true,
+  "remoteHtmlHttp200": true,
+  "remoteHtmlMatchesVisibleCat": true,
+  "appPidRecorded": true,
+  "fatalExceptionInAppLog": false,
+  "screenshotBytes": 1844873
+}

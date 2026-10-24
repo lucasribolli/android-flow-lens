@@ -1,0 +1,14 @@
+> Task :android-flow-lens:core:compileJava UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:compileJava UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:processResources UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:classes UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:jar UP-TO-DATE
+> Task :android-flow-lens:core:processResources NO-SOURCE
+> Task :android-flow-lens:core:classes UP-TO-DATE
+> Task :android-flow-lens:core:jar UP-TO-DATE
+> Task :android-flow-lens:gradle-plugin:standaloneJar
+> Task :android-flow-lens:gradle-plugin:validatePlugins UP-TO-DATE
+
+BUILD SUCCESSFUL in 2s
+8 actionable tasks: 1 executed, 7 up-to-date

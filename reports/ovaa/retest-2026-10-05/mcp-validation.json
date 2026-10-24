@@ -1,0 +1,36 @@
+{
+  "devices": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"devices\":[{\"id\":\"0068565454\",\"name\":\"moto g(8) play\",\"platform\":\"android\",\"type\":\"real\",\"version\":\"10\",\"state\":\"online\",\"model\":\"moto g(8) play\"}]}"
+      }
+    ]
+  },
+  "foreground": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Foreground app: Oversecured Vulnerable Android App (oversecured.ovaa)"
+      }
+    ]
+  },
+  "fridaSession": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": \"success\",\n  \"process_id\": 8360,\n  \"session_id\": \"session_8360_cfa78844641e4b9a90bd9ce54a86763d\",\n  \"message\": \"Interactive session created for process 8360. Use execute_in_session to run JavaScript commands.\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "result": {
+        "status": "success",
+        "process_id": 8360,
+        "session_id": "session_8360_cfa78844641e4b9a90bd9ce54a86763d",
+        "message": "Interactive session created for process 8360. Use execute_in_session to run JavaScript commands."
+      }
+    },
+    "isError": false
+  },
+  "fridaOutcome": "Java bridge unavailable; no Java hooks ran. Session detached."
+}

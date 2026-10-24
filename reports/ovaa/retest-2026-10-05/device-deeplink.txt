@@ -1,0 +1,6 @@
+Starting: Intent { act=android.intent.action.VIEW dat=oversecured://ovaa/webview?url=https://example.com cmp=oversecured.ovaa/.activities.DeeplinkActivity }
+Status: ok
+LaunchState: UNKNOWN (-1)
+Activity: oversecured.ovaa/.activities.WebViewActivity
+WaitTime: 653
+Complete

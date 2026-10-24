@@ -1,0 +1,49 @@
+--------- beginning of main
+10-05 16:23:37.330  8360  8360 I versecured.ova: Late-enabling -Xcheck:jni
+10-05 16:23:37.366  8360  8360 E versecured.ova: Unknown bits set in runtime_flags: 0x8000
+10-05 16:23:37.652  8360  8360 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-05 16:23:37.724  8360  8360 W ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@656b60c
+10-05 16:23:37.774  8360  8360 W versecured.ova: Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+10-05 16:23:37.907  8360  8360 W versecured.ova: Accessing hidden method Landroid/view/View;->getViewRootImpl()Landroid/view/ViewRootImpl; (greylist, reflection, allowed)
+10-05 16:23:37.907  8360  8360 W versecured.ova: Accessing hidden field Landroid/view/View$AttachInfo;->mVisibleInsets:Landroid/graphics/Rect; (greylist, reflection, allowed)
+10-05 16:23:37.908  8360  8360 W versecured.ova: Accessing hidden field Landroid/view/ViewRootImpl;->mAttachInfo:Landroid/view/View$AttachInfo; (greylist, reflection, allowed)
+10-05 16:23:37.953  8360  8386 D mali_winsys: EGLint new_window_surface(egl_winsys_display *, void *, EGLSurface, EGLConfig, egl_winsys_surface **, EGLBoolean) returns 0x3000
+10-05 16:23:37.963  8360  8386 W Gralloc3: mapper 3.x is not supported
+10-05 16:23:38.017  8360  8386 E gralloc : Arm Module v1.0
+10-05 16:23:38.020  8360  8386 E ion     : ioctl c0044901 failed with code -1: Invalid argument
+10-05 16:23:38.229  8360  8360 W ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@998603e
+10-05 16:23:38.270  8360  8360 W ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@765181c
+10-05 16:23:38.312  8360  8360 I WebViewFactory: Loading com.google.android.webview version 153.0.8010.36 (code 801003600)
+10-05 16:23:38.391  8360  8360 I cr_WVCFactoryProvider: version=153.0.8010.36 (801003600) minSdkVersion=29 multiprocess=true packageId=127 splits=<none>
+10-05 16:23:38.408  8360  8433 I chromium: [1005/162338.406845:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+10-05 16:23:38.409  8360  8433 I chromium: [1005/162338.409056:INFO:android_webview/browser/variations/variations_seed_loader.cc:67] Failed to open file for reading.: No such file or directory (2)
+10-05 16:23:38.453  8360  8360 I cr_LibraryLoader: Successfully loaded native library
+10-05 16:23:38.456  8360  8360 I cr_CachingUmaRecorder: Flushed 39 samples from 14 histograms, 0 samples were dropped.
+10-05 16:23:38.458  8360  8360 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+10-05 16:23:38.466  8360  8360 I cr_CombinedPProvider: #registerProvider() provider:WV.hj@a0a1881 isPolicyCacheEnabled:false policyProvidersSize:0
+10-05 16:23:38.466  8360  8360 I cr_PolicyProvider: #setManagerAndSource() 0
+10-05 16:23:38.468  8360  8431 I cr_policy: registerReceiver succeeded after 1ms
+10-05 16:23:38.472  8360  8360 I cr_DisplayManager: Is Display Topology available: false
+10-05 16:23:38.513  8360  8360 I cr_CombinedPProvider: #linkNativeInternal() 1
+10-05 16:23:38.514  8360  8360 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-05 16:23:38.514  8360  8360 I cr_PolicyProvider: #notifySettingsAvailable() 0
+10-05 16:23:38.514  8360  8360 I cr_CombinedPProvider: #onSettingsAvailable() 0
+10-05 16:23:38.514  8360  8360 I cr_CombinedPProvider: #flushPolicies()
+10-05 16:23:38.544  8360  8462 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+10-05 16:23:38.559  8360  8360 E libc    : Access denied finding property "ro.vendor.api_level"
+10-05 16:23:38.553  8360  8360 W versecured.ovaa: type=1400 audit(0.0:4228): avc: denied { read } for name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=15743 scontext=u:r:untrusted_app:s0:c199,c256,c512,c768 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
+10-05 16:23:38.661  8360  8468 W cr_media: getBluetoothAdapter() requires BLUETOOTH permission
+10-05 16:23:38.661  8360  8468 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+10-05 16:23:38.713  8360  8360 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-05 16:23:38.713  8360  8360 I cr_PolicyProvider: #notifySettingsAvailable() 0
+10-05 16:23:38.714  8360  8360 I cr_CombinedPProvider: #onSettingsAvailable() 0
+10-05 16:23:38.714  8360  8360 I cr_CombinedPProvider: #flushPolicies()
+10-05 16:23:38.716  8360  8489 I CameraManagerGlobal: Connecting to camera service
+10-05 16:23:38.779  8360  8386 D mali_winsys: EGLint new_window_surface(egl_winsys_display *, void *, EGLSurface, EGLConfig, egl_winsys_surface **, EGLBoolean) returns 0x3000
+10-05 16:23:38.929  8360  8475 W VideoCapabilities: Unrecognized profile/level 1/32 for video/mp4v-es
+10-05 16:23:38.929  8360  8475 W VideoCapabilities: Unrecognized profile/level 32768/2 for video/mp4v-es
+10-05 16:23:38.929  8360  8475 W VideoCapabilities: Unrecognized profile/level 32768/64 for video/mp4v-es
+10-05 16:23:38.934  8360  8475 W VideoCapabilities: Unsupported mime video/xvid
+10-05 16:23:38.939  8360  8475 W VideoCapabilities: Unrecognized profile/level 1/32 for video/mp4v-es
+10-05 16:23:39.222  8360  8460 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-05 16:23:43.491  8360  8539 D ProfileInstaller: Installing profile for oversecured.ovaa

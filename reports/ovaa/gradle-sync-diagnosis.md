@@ -1,5 +1,7 @@
 # OVAA Gradle sync diagnosis
 
+Historical diagnosis from 2026-09-25. On 2026-10-05 the original build configuration worked, including SDK 34, NDK 27, and CMake. Do not apply the old SDK/native adaptation for the current environment. See [the successful retest](retest-2026-10-05/README.md) and its minimal `ovaa-integration.patch` instead.
+
 The checkout is internally pinned to AGP 8.5.1 and Gradle 8.7, which is a compatible pair. The local Android Studio project configuration is the first problem: `.gradle/config.properties` points Gradle at an Android Studio JBR that reports Java 25. Use the JDK 17/21 toolchain instead:
 
 `/home/lucas/Documents/Codex/2026-09-17/x20/work/toolchains/jdk`

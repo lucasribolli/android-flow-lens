@@ -2,6 +2,7 @@ package dev.flowlens.core;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -71,7 +72,12 @@ public final class Reports {
         presentation.put("characters", compact.length());
         presentation.put("tokenCount", "not-measured");
         report.put("compactReport", presentation);
-        Files.writeString(output.resolve("analysis.json"), JSON.toJson(report) + "\n", StandardCharsets.UTF_8);
+        // Large dependency graphs already occupy memory as structured evidence.
+        // Stream JSON to disk instead of duplicating the full report as a String.
+        try (BufferedWriter writer = Files.newBufferedWriter(output.resolve("analysis.json"), StandardCharsets.UTF_8)) {
+            JSON.toJson(report, writer);
+            writer.newLine();
+        }
         Files.writeString(output.resolve("llm.md"), compact, StandardCharsets.UTF_8);
     }
 

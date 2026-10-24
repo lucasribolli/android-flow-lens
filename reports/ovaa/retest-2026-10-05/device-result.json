@@ -1,0 +1,10 @@
+{
+  "device": "moto g(8) play",
+  "android": "10",
+  "appPid": "8360",
+  "foreground": [
+    "mResumedActivity: ActivityRecord{4ca1f40 u0 oversecured.ovaa/.activities.WebViewActivity t24}"
+  ],
+  "fatalExceptionInAppLog": false,
+  "appLogBytes": 5595
+}

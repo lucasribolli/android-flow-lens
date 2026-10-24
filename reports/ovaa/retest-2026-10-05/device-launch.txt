@@ -1,0 +1,7 @@
+Starting: Intent { cmp=oversecured.ovaa/.activities.EntranceActivity }
+Status: ok
+LaunchState: COLD
+Activity: oversecured.ovaa/.activities.LoginActivity
+TotalTime: 910
+WaitTime: 912
+Complete

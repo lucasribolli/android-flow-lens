@@ -1,3 +1,4 @@
 .gradle/
 **/build/
 local.properties
+/reports/ovaa/retest-*/analysis.json

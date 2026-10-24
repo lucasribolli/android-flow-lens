@@ -1,0 +1,23 @@
+{
+  "ovaaMethodCount": 98,
+  "ovaaClassesWithMethods": 35,
+  "loggerConstantExecRetained": [
+    {
+      "caller": "oversecured/ovaa/services/InsecureLoggerService#dumpLogs(Ljava/io/File;)V",
+      "instruction": 4,
+      "line": 40,
+      "owner": "java/lang/Runtime",
+      "name": "exec",
+      "descriptor": "(Ljava/lang/String;)Ljava/lang/Process;",
+      "opcode": "INVOKEVIRTUAL",
+      "resolution": "declared-target-only"
+    }
+  ],
+  "compactReport": {
+    "emittedFindings": 1,
+    "omittedFindings": 0,
+    "characterBudget": 24000,
+    "characters": 2532,
+    "tokenCount": "not-measured"
+  }
+}
